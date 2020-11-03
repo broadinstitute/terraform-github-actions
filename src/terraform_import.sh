@@ -3,7 +3,7 @@
 function terraformImport {
   # Gather the output of `terraform import`.
   echo "import: info: importing Terraform configuration in ${tfWorkingDir}"
-  importOutput=$(terraform import -input=false ${*} 2>&1)
+  importOutput=$(terraform import ${tfOptArg} -input=false ${*} 2>&1)
   importExitCode=${?}
   importCommentStatus="Failed"
 

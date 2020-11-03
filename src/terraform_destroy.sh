@@ -3,7 +3,7 @@
 function terraformDestroy {
   # Gather the output of `terraform destroy`.
   echo "destroy: info: destroying Terraform-managed infrastructure in ${tfWorkingDir}"
-  destroyOutput=$(terraform destroy -auto-approve -input=false ${*} 2>&1)
+  destroyOutput=$(terraform destroy ${tfOptArg} -auto-approve -input=false ${*} 2>&1)
   destroyExitCode=${?}
   destroyCommentStatus="Failed"
 

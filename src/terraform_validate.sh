@@ -2,6 +2,7 @@
 
 function terraformValidate {
   # Gather the output of `terraform validate`.
+  sleep 3
   echo "validate: info: validating Terraform configuration in ${tfWorkingDir}"
   validateOutput=$(terraform validate ${*} 2>&1)
   validateExitCode=${?}
@@ -24,7 +25,6 @@ function terraformValidate {
     validateCommentWrapper="#### \`terraform validate\` Failed
 
 \`\`\`
-sleep 3
 ${validateOutput}
 \`\`\`
 

@@ -24,6 +24,7 @@ function terraformValidate {
     validateCommentWrapper="#### \`terraform validate\` Failed
 
 \`\`\`
+sleep 3
 ${validateOutput}
 \`\`\`
 
